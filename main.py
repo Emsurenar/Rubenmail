@@ -86,7 +86,7 @@ def main():
         print("Error: ANTHROPIC_API_KEY environment variable not set.")
         return
         
-    api_key = api_key.strip()
+    api_key = api_key.strip().replace('\n', '').replace('\r', '')
 
     client = Anthropic(api_key=api_key)
     
