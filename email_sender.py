@@ -5,9 +5,13 @@ from email.mime.text import MIMEText
 from datetime import datetime
 
 def send_email(html_content, subject_prefix="Dagens insikt"):
-    sender_email = os.getenv("EMAIL_SENDER", "").strip()
-    receiver_email = os.getenv("EMAIL_RECEIVER", "").strip()
-    password = os.getenv("EMAIL_PASSWORD", "").strip()
+    sender_email = os.getenv("EMAIL_SENDER", "").strip().replace('\n', '').replace('\r', '')
+    receiver_email = os.getenv("EMAIL_RECEIVER", "").strip().replace('\n', '').replace('\r', '')
+    password = os.getenv("EMAIL_PASSWORD", "").strip().replace('\n', '').replace('\r', '')
+
+    print(f"Sender: {sender_email}")
+    print(f"Receiver: {receiver_email}")
+    print(f"Password length: {len(password)}")
 
     if not all([sender_email, receiver_email, password]):
         print("Missing email credentials in environment variables.")

@@ -120,7 +120,11 @@ def main():
     
     # Send email
     print("Sending email...")
-    send_email(final_html)
+    result = send_email(final_html)
+    if result:
+        print("Email pipeline completed successfully!")
+    else:
+        print("ERROR: Email was NOT sent. Check credentials.")
 
 if __name__ == "__main__":
     main()
