@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
 
-def send_email(html_content, subject_prefix="Dagens insikt"):
+def send_email(html_content, subject_prefix="Dagens lärdom"):
     sender_email = os.getenv("EMAIL_SENDER", "").strip().replace('\n', '').replace('\r', '')
     receiver_email = os.getenv("EMAIL_RECEIVER", "").strip().replace('\n', '').replace('\r', '')
     password = os.getenv("EMAIL_PASSWORD", "").strip().replace('\n', '').replace('\r', '')

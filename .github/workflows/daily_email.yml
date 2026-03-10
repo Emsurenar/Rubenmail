@@ -1,4 +1,4 @@
-name: Send Daily Educational Email
+name: Dagens lärdom
 
 on:
   schedule:
