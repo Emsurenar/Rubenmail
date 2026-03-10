@@ -2,8 +2,8 @@ name: Send Daily Educational Email
 
 on:
   schedule:
-    # Run at 06:00 UTC (07:00 or 08:00 Swedish time) every day
-    - cron: '0 6 * * *'
+    # Run at 05:40 UTC (06:40 Swedish time CET, 07:40 CEST summer)
+    - cron: '40 5 * * *'
   workflow_dispatch:
 
 jobs:
