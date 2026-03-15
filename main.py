@@ -54,6 +54,7 @@ def generate_content(client, topic, history):
         "- Använd underrubriker (##) för struktur.\n"
         "- VIKTIGT: Skriv endast första ordet med stor bokstav i alla rubriker, oavsett om det är huvudrubrik eller underrubrik (t.ex. 'Artificiell dumhet' istället för 'Artificiell Dumhet').\n"
         "- Inkludera gärna konkreta exempel.\n"
+        "- VIKTIGT: Ett detaljerat och fullständigt exempel av det presenterade konceptet måste ALLTID ges.\n"
         "- Skriv på felfri, sofistikerad svenska.\n\n"
         "Viktigt: UNDVIK följande koncept då vi nyligen skrivit om dem:\n" + 
         "\n".join([f"- {item}" for item in history])
