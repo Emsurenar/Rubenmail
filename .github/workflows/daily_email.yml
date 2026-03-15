@@ -2,8 +2,8 @@ name: Dagens lärdom
 
 on:
   schedule:
-    # Run at 05:40 UTC (06:40 Swedish time CET, 07:40 CEST summer)
-    - cron: '40 5 * * *'
+    # Run at 05:15 UTC (06:15 Swedish time CET, 07:15 CEST summer)
+    - cron: '15 5 * * *'
   workflow_dispatch:
 
 jobs:
@@ -40,5 +40,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add history.json
           git diff --staged --quiet || git commit -m "chore: update history.json [skip ci]"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main
           git push
