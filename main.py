@@ -15,13 +15,11 @@ HISTORY_FILE = os.path.join(os.path.dirname(__file__), 'history.json')
 TOPICS = [
     "AI", 
     "Spelteori", 
-    "Nationalekonomi", 
-    "Beteendeekonomi",
     "Datavetenskap", 
-    "Marknadsföring", 
+    "Marknadsföringsteori", 
     "Formella system"
 ]
-WORD_COUNT_TARGET = 700
+WORD_COUNT_TARGET = 1000
 
 def load_history():
     if os.path.exists(HISTORY_FILE):
@@ -65,8 +63,8 @@ def generate_content(client, topic, history):
     print(f"Generating content for topic: {topic}...")
     response = client.messages.create(
         model="claude-opus-4-6",
-        max_tokens=2500,
-        temperature=0.7,
+        max_tokens=10000,
+        temperature=1.7,
         system=system_prompt,
         messages=[
             {"role": "user", "content": prompt}
