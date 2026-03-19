@@ -64,7 +64,7 @@ def generate_content(client, topic, history):
     response = client.messages.create(
         model="claude-opus-4-6",
         max_tokens=10000,
-        temperature=1.8,
+        temperature=1,
         system=system_prompt,
         messages=[
             {"role": "user", "content": prompt}
